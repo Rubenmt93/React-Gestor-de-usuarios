@@ -1,11 +1,10 @@
 import useFormulario from './hooks/useFormulario'
-import { useState } from "react"
-
+import Input from './components/Input'
 
 
 function App() {
 
-  const [formulario, handleChange] = useFormulario({name:''})
+  const [formulario, handleChange] = useFormulario({name:'',lastname:''})
  
   // const[formulario, setFormulario]= useState({name: ''})
   //   const handleChange= (e) => {
@@ -18,11 +17,8 @@ function App() {
     console.log(formulario);
   return (
     <form>
-      <input  name="name" 
-              placeholder="Nombre" 
-              value={formulario.name}
-              onChange={handleChange}
-      />
+    <Input label="Nombre" name="name" value={formulario.name} onChange={handleChange}/>
+    <Input label="Apellido" name="lastname" value={formulario.lastname} onChange={handleChange}/>
     
     </form>
   );
